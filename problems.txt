@@ -1,0 +1,22 @@
+# instaling opencv libraries
+solution :  pip install opencv-python
+# pip upgrading failure on windows
+solution : 
+
+
+Following pip installation, try this on Windows
+
+py -m ensurepip --upgrade
+
+This command activates pip.
+
+Ref. https://docs.python.org/3/library/ensurepip.html
+
+After this you can upgrade
+
+python -m pip install --upgrade pip
+
+or, on Windows
+
+py -m pip install -U pip
+
