@@ -94,7 +94,8 @@ out_mp4.release()
 #!apt-get -qq install ffmpeg 
 
 # Change video encoding of mp4 file from XVID to h264 
-!ffmpeg -y -i "/content/race_car_out.mp4" -c:v libx264 "race_car_out_x264.mp4"  -hide_banner -loglevel error
+#joupyter notebook terminal command is here
+#!ffmpeg -y -i "/content/race_car_out.mp4" -c:v libx264 "race_car_out_x264.mp4"  -hide_banner -loglevel error
 
 # Render MP4 Video
 mp4 = open("/content/race_car_out_x264.mp4", "rb").read()
