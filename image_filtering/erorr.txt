@@ -1,0 +1,23 @@
+# error message 
+
+line 45, in <module>
+    cv2.circle(result, (x, y), 10, (0, 255, 0), 1)
+cv2.error: OpenCV(4.9.0) :-1: error: (-5:Bad argument) in function 'circle'
+> Overload resolution failed:
+>  - Can't parse 'center'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'center'. Sequence item with index 0 has a wrong type
+
+# solution
+
+The error message you're encountering indicates an issue with the arguments passed to the cv2.circle() function. Specifically, it seems that there's a problem with the center argument, which is expected to be a tuple (x, y) representing the center coordinates of the circle.
+
+The error suggests that the sequence item at index 0 of the center tuple has a wrong type. This could be due to the fact that x and y might not be converted to integers properly. Let's ensure that the coordinates (x, y) are integers before passing them to the cv2.circle() function. We can do this by converting them explicitly using the int() function. Here's how you can modify the line causing the error:
+
+===========================================================
+
+python
+
+cv2.circle(result, (int(x), int(y)), 10, (0, 255, 0), 1)
+
+===========================================================
+By converting x and y to integers using int(), we ensure that they are of the correct type before passing them to the cv2.circle() function, resolving the error related to the wrong type of the sequence items.
